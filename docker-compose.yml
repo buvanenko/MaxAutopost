@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  bot:
+    build: .
+    container_name: maxautopost-bot
+    restart: unless-stopped
+    env_file:
+      - .env
+    volumes:
+      # Optional: mount .env for easier updates without rebuild
+      - ./.env:/app/.env:ro
